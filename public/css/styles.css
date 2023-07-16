@@ -191,7 +191,6 @@ header{
   display: flex;
   flex-direction: column;
   transition: 200ms;
-  height: inherit;
 }
 
 .produ:hover {
@@ -293,6 +292,7 @@ footer{
 footer section{
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: 8px
 }
 
@@ -305,21 +305,31 @@ footer section p{
   color: grey;
 }
 
+footer section i{
+  font-size: 24px;
+  color: #03264C;
+  transition: 200ms;
+}
 
+footer section i:hover{
+  color: #1259c3;
+}
 
 /*Formularios*/
 
 .containerForm{
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   padding: 24px;
+  height: 100%;
 }
 
 form{
   display: flex;
   flex-direction: column;
-  width: 300px;
+  justify-content: center;
+  width: 350px;
   background-color: #ffffff;
   padding: 16px;
   border-radius: 8px;
@@ -328,12 +338,63 @@ form{
   gap: 16px;
 }
 
-form input {
+.textinput {
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
+.dateinput{
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.perfil{
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.checkinput{
+  padding: 4px;
+  font-size: 14px;
+  color: grey;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.fileinput{
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.passinput{
+  padding: 4px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.interes{
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+}
+
+form button{
+  padding: 8px;
+  border: 0px;
+  background-color: #03264C;
+  color: #ffffff;
+  border-radius: 4px;
+  transition: 200ms;
+}
+
+form button:hover{
+  background-color: #0022aa;
+}
 
 
 /*-------Media queries----------*/

@@ -44,51 +44,50 @@
 <main class="containerForm">  
   <form action="resultado.html" method="POST">
     <h3>Creá tu cuenta</h3>
-    <input type="text" id="nombre" name="nombre" placeholder="Nombre y apellido" required>
-    <input type="text" id="usuario" name="usuario" placeholder="Usuario" required>
-    <input type="date" id="fechaNacimiento" name="fechaNacimiento" placeholder="Fecha de Nacimiento" required>
-    <input type="text" id="domicilio" name="domicilio" placeholder="Domicilio" required>
+    <input class="textinput" type="text" id="nombre" name="nombre" placeholder="Nombre y apellido" required>
+    <input class="textinput" type="text" id="usuario" name="usuario" placeholder="Usuario" required>
+    <input class="dateinput" type="date" id="fechaNacimiento" name="fechaNacimiento" placeholder="Fecha de Nacimiento" required>
+    <input class="textinput" type="text" id="domicilio" name="domicilio" placeholder="Domicilio" required>
 
     <label for="perfilUsuario">Perfil del Usuario:</label>
-    <select id="perfilUsuario" name="perfilUsuario">
-      <option value="compra">Comprar</option>
-      <option value="venta">Vender</option>
+    <select class="perfil" name="perfilUsuario">
+        <option value="compra">Comprar</option>
+        <option value="venta">Vender</option>
     </select>
+    <div class="interes">
+        <label>Categorías de Interés:</label>
+            <div class="checkinput">
+                <input type="checkbox" id="categoriaElectro" name="categorias" value="electro">
+                <label for="categoriaElectro">Electro</label>
+            </div>
+            <div class="checkinput">
+                <input type="checkbox" id="categoriaModa" name="categorias" value="moda">
+                <label for="categoriaModa">Moda</label>
+            </div>
+            <div class="checkinput">
+                <input type="checkbox" id="categoriaHogar" name="categorias" value="hogar">
+                <label for="categoriaHogar">Hogar</label>
+            </div>
+            <div class="checkinput">
+                <input type="checkbox" id="categoriaJugueteria" name="categorias" value="jugueteria">
+                <label for="categoriaJugueteria">Juguetería</label>
+            </div>
+            <div class="checkinput">
+                <input type="checkbox" id="categoriaVidaSana" name="categorias" value="vida_sana">
+                <label for="categoriaVidaSana">Vida Sana</label>
+            </div>
+    </div>
 
-    <label>Categorías de Interés:</label><br>
-    <input type="checkbox" id="categoriaElectro" name="categorias" value="electro">
-    <label for="categoriaElectro">Electro</label><br>
+    <input class="fileinput" type="file" id="fotoUsuario" name="fotoUsuario" placeholder="Subí tu foto">
 
-    <input type="checkbox" id="categoriaModa" name="categorias" value="moda">
-    <label for="categoriaModa">Moda</label><br>
+    <input class="passinput" type="password" id="contrasena" name="contrasena" placeholder="Contraseña" required>
 
-    <input type="checkbox" id="categoriaHogar" name="categorias" value="hogar">
-    <label for="categoriaHogar">Hogar</label><br>
-
-    <input type="checkbox" id="categoriaJugueteria" name="categorias" value="jugueteria">
-    <label for="categoriaJugueteria">Juguetería</label><br>
-
-    <input type="checkbox" id="categoriaVidaSana" name="categorias" value="vida_sana">
-    <label for="categoriaVidaSana">Vida Sana</label><br>
-
-    <label for="fotoUsuario">Foto de Usuario:</label>
-    <input type="file" id="fotoUsuario" name="fotoUsuario">
-
-    <label for="contrasena">Contraseña:</label>
-    <input type="password" id="contrasena" name="contrasena" required>
-
-    <label for="confirmarContrasena">Confirmar Contraseña:</label>
-    <input type="password" id="confirmarContrasena" name="confirmarContrasena" required>
+    <input class="passinput" type="password" id="confirmarContrasena" name="confirmarContrasena" placeholder="Confirmar contraseña" required>
 
     <button type="submit">Enviar</button>
-    <button type="button" onclick="borrarDatos()">Borrar Datos</button>
+
   </form>
 
-  <script>
-    function borrarDatos() {
-      document.getElementById("registroForm").reset();
-    }
-  </script>
 </main> 
 </body>
 </html>
