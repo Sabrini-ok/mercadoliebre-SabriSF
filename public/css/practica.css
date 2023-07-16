@@ -42,3 +42,18 @@ footer {
     align-items: center;
     box-sizing: border-box;
 }
+
+
+/*transiciones y animaciones*/
+
+.mi-elemento {
+    width: 100px;
+    height: 100px;
+    background-color: salmon;
+    transition: border-radius 450ms;
+  }
+  
+  .mi-elemento:hover {
+    border-radius: 50%;
+  }
+  

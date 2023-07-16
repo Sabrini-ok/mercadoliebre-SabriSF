@@ -1,13 +1,22 @@
 /*generales*/
+
+*{
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
 body {
-    margin: 0;
-    padding: 0;
     background-color: white;
     font-family: 'Roboto', sans-serif;
     width: 100vw;
     height: 100vh; 
     display: flex;
     flex-direction: column;
+}
+
+main{
+  background-color: #ebebeb;
 }
 
 a{
@@ -22,44 +31,38 @@ ul {
 }
 
 .links li {
-  display: inline-block;
+  font-size: 14px;
+  display: flex;
+}
+
+#izq{
+  justify-content: flex-start;
+}
+
+#der{
+  justify-content: flex-end;
 }
 
 img{
   width: 100%;
 } 
 
-.logo{
-  width: 200px;
-  padding: 24;
-}
-
 
 /*Texto*/
 h3{
   font-size: 24px;
-}
-
-.precio {
-  font-size: 18px;
-}
-.descuento {
-  font-size: 16px;
-
-}
-.descripcion {
-  font-size: 16px;
+  font-weight: 500;
+  color: dimgrey;
 }
 
 p {
-  font-size: 12px;
+  font-size: 14px;
 }
 
 /*Search bar*/
 .search-bar {
     display: flex;
-    width: 25%;
-    box-sizing: border-box;
+    width: 50%;
   }
 
 .search-input {
@@ -69,7 +72,7 @@ p {
   border-left: #ffffff;
   border-right: 1px solid #ccc;
   border-radius: 4px 0 0 4px;
-  width: 200px;
+  width: 100%;
 }
   
 .search-button {
@@ -90,55 +93,50 @@ p {
 
 header{
   width: 100%;
-  height: 20%;
   background-color: #EAC926;
   padding: 24px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  box-sizing: border-box;
+  align-items: center;
+  gap: 8px;
+
 }
 
 .topbar{
   width: 100%;
-  margin: 0;
-  padding: 0;
   display: flex;
   flex-direction: row;
   justify-content:space-between;
   align-items: center;
-  flex-wrap: nowrap;
-  box-sizing: border-box;
+  flex-wrap: wrap;
 }
+
+.logo{
+  width: 50%;
+  padding: 8px 8px 8px 0px;
+}
+
+.promo{
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 8px;
+}
+
 
 .navbar{
-  width: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content:space-between;
-  align-items: center;
-  flex-wrap: nowrap;
-  box-sizing: border-box;
+  display: none;
 }
 
-
 .links{
-  width: 25%;
-  height: 100%;
-  margin: 0;
-  padding: 0;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  box-sizing: border-box;
+  display: none;
 }
 
 .menu{
   width: 100%;
-  align-items: center;
+  display: flex;
+  justify-content: center;
 }
 
 .burgermenu{
@@ -147,17 +145,21 @@ header{
   border-radius: 4px;
   color: white;
   padding: 8px;
-  box-sizing: border-box;
   align-content: center;
 }
 
-main{
-  margin: 0;
-  padding: 0px 0px 48px 0px;
+
+.banner{
+  display: flex;
+  width: 100%;
+}
+
+.container{
+  padding: 24px 0px 48px 0px;
   display: flex;
   flex-direction: column;
-  box-sizing: border-box;
   background-color: #ebebeb;
+  gap: 16px;
 }
 
 .carrusel{
@@ -167,9 +169,8 @@ main{
   flex-direction: column;
   justify-content: space-around;
   align-items: flex-start;
-  box-sizing: border-box;
   margin: 0px;
-  box-sizing: border-box;
+  gap: 16px;
 }
 
 .productos {
@@ -178,44 +179,48 @@ main{
   flex-direction: row;
   justify-content: space-between;
   width: 100%;
-  box-sizing: border-box;
+  gap: 16px;
+  position: relative;
 }
 
 .produ{
-  width: 24%;
-  border-radius: 16px;
-  box-shadow: 0px 5px 10px 0px rgba(29, 29, 29, 0.255);
-  padding: 0px;
-  box-sizing: border-box;
+  width: 100%;
+  border-radius: 8px;
+  box-shadow: 0px 1px 4px 0px rgba(159, 159, 159, 0.503);
   background-color: white;
   display: flex;
   flex-direction: column;
+  transition: 200ms;
+  height: inherit;
 }
 
-.merca{
-  width: 100%;
-  padding: 16px;
-  box-sizing: border-box;
-  background-color: white;
-  border-radius: 0px 0px 16px 16px;
-  border-top: 1px solid #e4e4e4;
+.produ:hover {
+  box-shadow: 0px 5px 10px 0px rgba(29, 29, 29, 0.255);
 }
 
-/* .envios{
-  width: 48px;
-  height: 48px;
-  color: #39b54a;
-  border-radius: 50%;
-  border: 1px solid #39b54a; 
-  box-sizing: border-box; 
-} */
+.produ:hover .nombre { 
+  display: block; 
+}
 
 .fotito{
+  display: flex;
+  justify-content: center;
   width: 100%;
   background-color: white;
   padding: 8px;
-  border-radius: 16px 16px 0px 0px;
-  box-sizing: border-box;
+  border-radius: 8px 8px 0px 0px;
+}
+
+.descripcion{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  padding: 16px;
+  background-color: white;
+  border-radius: 0px 0px 8px 8px;
+  gap: 16px;
+  border-top: 1px solid #e4e4e4;
+  position: relative;
 }
 
 .envios{
@@ -225,42 +230,221 @@ main{
   height: 30px;
   border: 1px solid #39b54a;
   background-color: #FFF;
-  color: #39b54a;
   border-radius: 50%;
-  position: relative;
+  position: absolute;
   right: 20px;
   top: -15px;
   width: 30px;
+  color: #39b54a;
+  transition: 450ms;
+}
+
+.envios:hover {
+  transform: rotateZ(-90deg)
+}
+
+.costo{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.precio{
+  width: 32%;
+  font-size: 16px;
+  color: dimgrey;
+}
+
+.descuento{
+  width: 68%;
+  font-size: 16;
+  color: #39b54a;
+}
+
+.nombre{
+  display: none;
+  font-size: 16px;
+  transition: 200ms;
 }
 
 
-#footer {
+/*Footer*/
+
+footer{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  padding: 24px;
+}
+
+.beneficios {
   background-color: white;
   text-align: center;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+footer section{
+  display: flex;
+  flex-direction: column;
+  gap: 8px
+}
+
+footer section h4{
+  font-weight: 500;
+  color: #03264C;
+}
+
+footer section p{
+  color: grey;
+}
+
+
+
+/*Formularios*/
+
+.containerForm{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+}
+
+form{
+  display: flex;
+  flex-direction: column;
+  width: 300px;
+  background-color: #ffffff;
   padding: 16px;
+  border-radius: 8px;
+  box-shadow: 0px 5px 10px 0px rgba(29, 29, 29, 0.255);
+  background-color: white;
+  gap: 16px;
+}
+
+form input {
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
 }
 
 
-  /*cositas
-  div {
-    width: 120px;
-    height: 120px;
-    padding: 20px;
-    border: 20px;
-    margin: 20px;
-    box-sizing: border-box;
-  }
-  */
 
-  /* Media queries */
+/*-------Media queries----------*/
+
+@media (min-width: 460px){
+/* Tablets */
 
 
-@media (min-width: 780px){
-    /* Tablets */
+.logo{
+  width: 33%;
+  padding: 8px;
+}
+
+.logo img{
+  width: 200px;
+}
+
+.productos{
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.produ{
+  width: 47%;
+}
 
 }
 
-@media (min-width: 1280px){
-    /* Laptop */
+
+
+@media (min-width: 768px){
+/* Laptop */
+
+header{
+  width: 100%;
+  background-color: #EAC926;
+  padding: 24px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.topbar{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+.logo{
+  width: 33%;
+  padding: 8px;
+}
+
+.logo img{
+  width: 200px;
+}
+
+.search-bar {
+  display: flex;
+  width: 32%;
+}
+
+.promo{
+  width: 32%;
+  display: flex;
+  justify-content: flex-end;
+  padding: 8px;
+}
+
+.navbar{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content:space-between;
+  align-items: center;
+  flex-wrap: nowrap;
+}
+
+
+.links{
+  width: 48%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  gap: 16px;
+}
+
+.menu{
+  display: none;
+}
+
+.container{
+  padding: 24px 40px 48px 40px;
+}
+
+
+.productos{
+  flex-direction: row;
+}
+
+.produ{
+  width: 23%;
+}
+
+.beneficios{
+  flex-direction: row;
+  justify-content: space-between;
+}
 
 }
